@@ -1,1 +1,1 @@
-export { Div } from "./dom/Div";
+export * from './tags';
