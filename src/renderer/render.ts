@@ -11,6 +11,6 @@ export const renderPage = (page: string, filename: string) => {
     console.log(path);
     writeFile(path, page, { flag: 'w+' }, function (err) {
         if (err) throw err;
-        console.log(filename + 'built!');
+        console.log(filename + ' built!');
     });
 }
