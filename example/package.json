@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vortexus": "file:../dist"
+    "vortexus": "workspace:*"
   }
 }
