@@ -18,11 +18,14 @@ importers:
         specifier: ^8.0.0
         version: 8.0.3
 
-  example:
-    dependencies:
-      vortexus:
-        specifier: workspace:*
-        version: link:../packages/vortexus
+  packages/scripts:
+    devDependencies:
+      '@types/node':
+        specifier: ^20.11.5
+        version: 20.11.5
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
 
   packages/vortexus:
     devDependencies:

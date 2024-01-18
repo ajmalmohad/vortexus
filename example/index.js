@@ -1,7 +1,7 @@
 import { home } from './home.js';
 
 import { HTML, Head, Title, Meta, Link, Body } from 'vortexus';
-import { renderPage, startServer } from 'vortexus';
+import { renderPage } from 'vortexus';
 
 const head = Head({
     children: [
@@ -32,4 +32,3 @@ const page = HTML({
 })
 
 renderPage(page, 'index.html')
-startServer(3000);
