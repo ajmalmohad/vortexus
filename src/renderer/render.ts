@@ -1,7 +1,7 @@
 import { writeFile, existsSync, mkdirSync } from 'fs';
 
 export const renderPage = (page: string, filename: string) => {
-    let dir = 'output';
+    let dir = 'dist';
 
     if (!existsSync(dir)){
         mkdirSync(dir);
@@ -11,6 +11,6 @@ export const renderPage = (page: string, filename: string) => {
     console.log(path);
     writeFile(path, page, { flag: 'w+' }, function (err) {
         if (err) throw err;
-        console.log("It's saved!");
+        console.log(filename + 'built!');
     });
 }
