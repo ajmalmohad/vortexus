@@ -1,15 +1,17 @@
 {
-  "name": "vortexus",
-  "version": "0.0.2",
-  "description": "A simple library to build awesome web apps",
+  "private": true,
+  "workspaces": [
+    "./packages/*"
+  ],
   "scripts": {
-    "build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json",
-    "run:example": "npm run build && cd example && npm run build"
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
   },
   "author": "ajmalmohad",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "typescript": "^5.3.3"
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "husky": "^8.0.0"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "vortexus",
+  "version": "0.0.2",
+  "description": "A simple library to build awesome web apps",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc"
+  },
+  "author": "ajmalmohad",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}
