@@ -1,4 +1,4 @@
-import { createElement } from "./element";
+import { createElement, createSelfClosingElement } from "./element";
 
 type CommonProps = {
     children?: string[];
@@ -7,27 +7,24 @@ type CommonProps = {
 
 type CombinedProps<T> = T & CommonProps;
 
+// Normal Elements
 export const HTML = createElement<CombinedProps<HTMLElement>>('html');
 export const A = createElement<CombinedProps<HTMLAnchorElement>>('a');
 export const Abbr = createElement<CombinedProps<HTMLElement>>('abbr');
 export const Address = createElement<CombinedProps<HTMLElement>>('address');
-export const Area = createElement<CombinedProps<HTMLAreaElement>>('area');
 export const Article = createElement<CombinedProps<HTMLElement>>('article');
 export const Aside = createElement<CombinedProps<HTMLElement>>('aside');
 export const Audio = createElement<CombinedProps<HTMLAudioElement>>('audio');
 export const B = createElement<CombinedProps<HTMLElement>>('b');
-export const Base = createElement<CombinedProps<HTMLBaseElement>>('base');
 export const Bdi = createElement<CombinedProps<HTMLElement>>('bdi');
 export const Bdo = createElement<CombinedProps<HTMLElement>>('bdo');
 export const Blockquote = createElement<CombinedProps<HTMLQuoteElement>>('blockquote');
 export const Body = createElement<CombinedProps<HTMLBodyElement>>('body');
-export const Br = createElement<CombinedProps<HTMLBRElement>>('br');
 export const Button = createElement<CombinedProps<HTMLButtonElement>>('button');
 export const Canvas = createElement<CombinedProps<HTMLCanvasElement>>('canvas');
 export const Caption = createElement<CombinedProps<HTMLTableCaptionElement>>('caption');
 export const Cite = createElement<CombinedProps<HTMLElement>>('cite');
 export const Code = createElement<CombinedProps<HTMLElement>>('code');
-export const Col = createElement<CombinedProps<HTMLTableColElement>>('col');
 export const Colgroup = createElement<CombinedProps<HTMLTableColElement>>('colgroup');
 export const Data = createElement<CombinedProps<HTMLDataElement>>('data');
 export const Datalist = createElement<CombinedProps<HTMLDataListElement>>('datalist');
@@ -40,7 +37,6 @@ export const Div = createElement<CombinedProps<HTMLDivElement>>('div');
 export const Dl = createElement<CombinedProps<HTMLDListElement>>('dl');
 export const Dt = createElement<CombinedProps<HTMLElement>>('dt');
 export const Em = createElement<CombinedProps<HTMLElement>>('em');
-export const Embed = createElement<CombinedProps<HTMLEmbedElement>>('embed');
 export const Fieldset = createElement<CombinedProps<HTMLFieldSetElement>>('fieldset');
 export const Figcaption = createElement<CombinedProps<HTMLElement>>('figcaption');
 export const Figure = createElement<CombinedProps<HTMLElement>>('figure');
@@ -58,20 +54,16 @@ export const Hr = createElement<CombinedProps<HTMLHRElement>>('hr');
 export const Html = createElement<CombinedProps<HTMLHtmlElement>>('html');
 export const I = createElement<CombinedProps<HTMLElement>>('i');
 export const Iframe = createElement<CombinedProps<HTMLIFrameElement>>('iframe');
-export const Img = createElement<CombinedProps<HTMLImageElement>>('img');
-export const Input = createElement<CombinedProps<HTMLInputElement>>('input');
 export const Ins = createElement<CombinedProps<HTMLModElement>>('ins');
 export const Kbd = createElement<CombinedProps<HTMLElement>>('kbd');
 export const Label = createElement<CombinedProps<HTMLLabelElement>>('label');
 export const Legend = createElement<CombinedProps<HTMLLegendElement>>('legend');
 export const Li = createElement<CombinedProps<HTMLLIElement>>('li');
-export const Link = createElement<CombinedProps<HTMLLinkElement>>('link');
 export const Main = createElement<CombinedProps<HTMLElement>>('main');
 export const Map = createElement<CombinedProps<HTMLMapElement>>('map');
 export const Mark = createElement<CombinedProps<HTMLElement>>('mark');
 export const Math = createElement<CombinedProps<MathMLElement>>('math');
 export const Menu = createElement<CombinedProps<HTMLMenuElement>>('menu');
-export const Meta = createElement<CombinedProps<HTMLMetaElement>>('meta');
 export const Meter = createElement<CombinedProps<HTMLMeterElement>>('meter');
 export const Nav = createElement<CombinedProps<HTMLElement>>('nav');
 export const Noscript = createElement<CombinedProps<HTMLElement>>('noscript');
@@ -81,7 +73,6 @@ export const Optgroup = createElement<CombinedProps<HTMLOptGroupElement>>('optgr
 export const Option = createElement<CombinedProps<HTMLOptionElement>>('option');
 export const Output = createElement<CombinedProps<HTMLOutputElement>>('output');
 export const P = createElement<CombinedProps<HTMLParagraphElement>>('p');
-export const Param = createElement<CombinedProps<HTMLParamElement>>('param');
 export const Picture = createElement<CombinedProps<HTMLPictureElement>>('picture');
 export const Pre = createElement<CombinedProps<HTMLPreElement>>('pre');
 export const Progress = createElement<CombinedProps<HTMLProgressElement>>('progress');
@@ -96,7 +87,6 @@ export const Section = createElement<CombinedProps<HTMLElement>>('section');
 export const Select = createElement<CombinedProps<HTMLSelectElement>>('select');
 export const Slot = createElement<CombinedProps<HTMLSlotElement>>('slot');
 export const Small = createElement<CombinedProps<HTMLElement>>('small');
-export const Source = createElement<CombinedProps<HTMLSourceElement>>('source');
 export const Span = createElement<CombinedProps<HTMLSpanElement>>('span');
 export const Strong = createElement<CombinedProps<HTMLElement>>('strong');
 export const Style = createElement<CombinedProps<HTMLStyleElement>>('style');
@@ -115,9 +105,22 @@ export const Thead = createElement<CombinedProps<HTMLTableSectionElement>>('thea
 export const Time = createElement<CombinedProps<HTMLTimeElement>>('time');
 export const Title = createElement<CombinedProps<HTMLTitleElement>>('title');
 export const Tr = createElement<CombinedProps<HTMLTableRowElement>>('tr');
-export const Track = createElement<CombinedProps<HTMLTrackElement>>('track');
 export const U = createElement<CombinedProps<HTMLElement>>('u');
 export const Ul = createElement<CombinedProps<HTMLUListElement>>('ul');
 export const Var = createElement<CombinedProps<HTMLElement>>('var');
 export const Video = createElement<CombinedProps<HTMLVideoElement>>('video');
-export const Wbr = createElement<CombinedProps<HTMLElement>>('wbr');
+
+// Self Closing Elements
+export const Area = createSelfClosingElement<HTMLAreaElement>('area');
+export const Base = createSelfClosingElement<HTMLBaseElement>('base');
+export const Br = createSelfClosingElement<HTMLBRElement>('br');
+export const Col = createSelfClosingElement<HTMLTableColElement>('col');
+export const Embed = createSelfClosingElement<HTMLEmbedElement>('embed');
+export const Img = createSelfClosingElement<HTMLImageElement>('img');
+export const Input = createSelfClosingElement<HTMLInputElement>('input');
+export const Link = createSelfClosingElement<HTMLLinkElement>('link');
+export const Meta = createSelfClosingElement<HTMLMetaElement>('meta');
+export const Param = createSelfClosingElement<HTMLParamElement>('param');
+export const Source = createSelfClosingElement<HTMLSourceElement>('source');
+export const Track = createSelfClosingElement<HTMLTrackElement>('track');
+export const Wbr = createSelfClosingElement<HTMLElement>('wbr');

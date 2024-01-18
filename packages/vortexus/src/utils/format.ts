@@ -15,7 +15,7 @@ export function format(html: string): string {
 
         formatted += " ".repeat(indent * indentLevel) + trimmed + "\n";
 
-        if (trimmed.startsWith("<") && !trimmed.startsWith("</")) {
+        if (trimmed.startsWith("<") && !trimmed.startsWith("</") && !trimmed.endsWith("/>")) {
             indentLevel++;
         }
     }

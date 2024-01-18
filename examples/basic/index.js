@@ -8,6 +8,15 @@ const head = Head({
         Title({
             content: 'Vortexus'
         }),
+        Meta({
+            name: 'viewport',
+            width: 'device-width',
+            'initial-scale': '1.0'
+        }),
+        Link({
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+        }),
     ]
 });
 
