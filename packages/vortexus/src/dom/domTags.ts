@@ -1,4 +1,4 @@
-import { createElement, createSelfClosingElement } from "./element";
+import { createElement, createSelfClosingElement } from "./tagFactory";
 
 type CommonProps = {
     children?: string[];

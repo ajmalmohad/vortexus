@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node index.js",
-    "dev": "vortexus-scripts dev",
-    "start": "vortexus-scripts start"
+    "start": "node index.js",
+    "serve": "vortexus-scripts serve"
   },
   "author": "",
   "license": "ISC",

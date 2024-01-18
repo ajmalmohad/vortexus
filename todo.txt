@@ -1,6 +1,7 @@
 [x] Create proper formatting
 [x] Building HTML and generating page
 [x] Page splitting and multipage apps
+[] Directly serve with express
 [] Adding external CSS
 [] Adding extra JS files
 [] Shipping JS
