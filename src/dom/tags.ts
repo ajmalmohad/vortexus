@@ -7,6 +7,8 @@ type CommonProps = {
 
 type CombinedProps<T> = T & CommonProps;
 
+export const HTML = createElement<CombinedProps<HTMLElement>>('html');
+
 export const A = createElement<CombinedProps<HTMLAnchorElement>>('a');
 export const Abbr = createElement<CombinedProps<HTMLElement>>('abbr');
 export const Address = createElement<CombinedProps<HTMLElement>>('address');
