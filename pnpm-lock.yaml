@@ -18,6 +18,15 @@ importers:
         specifier: ^8.0.0
         version: 8.0.3
 
+  examples/basic:
+    dependencies:
+      vortexus:
+        specifier: workspace:*
+        version: link:../../packages/vortexus
+      vortexus-scripts:
+        specifier: workspace:*
+        version: link:../../packages/scripts
+
   packages/scripts:
     devDependencies:
       '@types/node':

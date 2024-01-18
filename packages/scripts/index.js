@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import { createServer } from 'http';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -57,7 +59,22 @@ const server = createServer(function (request, response) {
 
 })
 
-export const startServer = (port: number) => {
+export const startServer = (port) => {
     server.listen(port);
     console.log('Server running at http://127.0.0.1:3000/');
+}
+
+const [task] = process.argv.slice(2);
+
+switch (task) {
+  case "dev": {
+    startServer(3000);
+    break;
+  }
+  case "build": {
+    console.log("build");
+    break;
+  }
+  default:
+    console.log(`Unknown script "${task}".`);
 }

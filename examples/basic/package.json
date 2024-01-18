@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "build": "node index.js",
-    "dev": ""
+    "dev": "vortexus-scripts dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vortexus": "workspace:*"
+    "vortexus": "workspace:*",
+    "vortexus-scripts": "workspace:*"
   }
 }
