@@ -1,3 +1,5 @@
+import { format } from "../utils/format";
+
 type ElementProps = {
     children?: string[];
     content?: string;
@@ -15,9 +17,11 @@ export function createElement<T extends ElementProps>(tag: string) {
         const innerContent = content || "";
 
         return (
+format(
 `<${tag} ${attributeStrings}>
-${innerContent} ${children ? "\n" + children.join("\n") : ""}
+${innerContent} ${children?.length > 0 ? "\n" + children.join("\n") : ""}
 </${tag}>`
+)
         );
     }
 }

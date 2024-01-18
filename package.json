@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A simple library to build awesome web apps",
   "scripts": {
-    "build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json"
+    "build": "rm -rf dist/lib && tsc && tsc --build tsconfig.es5.json",
+    "run:example": "npm run build && cd examples && npm run start"
   },
   "author": "ajmalmohad",
   "license": "MIT",

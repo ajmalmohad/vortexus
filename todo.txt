@@ -1,4 +1,4 @@
-[] Create proper formatting
+[x] Create proper formatting
 [] Building HTML and generating page
 [] Page splitting and multipage apps
 [] Adding external CSS
