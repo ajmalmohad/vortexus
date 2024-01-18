@@ -8,15 +8,6 @@ const head = Head({
         Title({
             content: 'Vortexus'
         }),
-        Meta({
-            name: 'viewport',
-            width: 'device-width',
-            'initial-scale': '1'
-        }),
-        Link({
-            rel: 'stylesheet',
-            href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
-        })
     ]
 });
 
