@@ -5,11 +5,11 @@ import * as path from 'path';
 const server = createServer(function (request, response) {
     console.log('Requesting...');
 
-    var filePath = './dist' + request.url;
+    var filePath = './build' + request.url;
     console.log(filePath);
     
-    if (filePath == './dist/')
-        filePath = './dist/index.html';
+    if (filePath == './build/')
+        filePath = './build/index.html';
 
     console.log(filePath);
 

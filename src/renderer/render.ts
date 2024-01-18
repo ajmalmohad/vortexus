@@ -1,7 +1,7 @@
 import { writeFile, existsSync, mkdirSync } from 'fs';
 
 export const renderPage = (page: string, filename: string) => {
-    let dir = 'dist';
+    let dir = 'build';
 
     if (!existsSync(dir)){
         mkdirSync(dir);
