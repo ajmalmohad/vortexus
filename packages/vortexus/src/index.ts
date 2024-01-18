@@ -1,3 +1,3 @@
 export * from './dom/domTags';
 export * from './serve/builder';
-export * from './serve/server';
+export * from './serve/render';

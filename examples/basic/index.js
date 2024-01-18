@@ -1,7 +1,7 @@
 import { home } from './home.js';
 
 import { HTML, Head, Title, Meta, Link, Body } from 'vortexus';
-import { servePages } from 'vortexus';
+import { render } from 'vortexus';
 
 const head = Head({
     children: [
@@ -36,4 +36,4 @@ let pages = {
     'home': page,
 }
 
-servePages(pages)
+render(pages, 'ssg')
