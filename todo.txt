@@ -1,6 +1,6 @@
 [x] Create proper formatting
-[] Building HTML and generating page
-[] Page splitting and multipage apps
+[x] Building HTML and generating page
+[x] Page splitting and multipage apps
 [] Adding external CSS
 [] Adding extra JS files
 [] Shipping JS
