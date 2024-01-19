@@ -5,10 +5,10 @@
 [x] Adding external CSS
 [x] Adding extra JS files
 [x] Shipping JS
-[] Return a function instead of rendered content
-[] Render at build time or serve time
+[x] Return a function instead of rendered content
+[x] Render at build time or serve time
 [] InnerHTML
 [] Better Usability
-[] Create singleton for pages so you can append to it
-[] Page as a singleton and renderable thing
-[] Maybe use a class for it
+[x] Page as a singleton and renderable thing
+[x] Maybe use a class for it
+[] allow local relative filepath for scripts and stylesheets

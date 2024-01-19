@@ -5,11 +5,9 @@ type CommonProps = {
     content?: string;
 }
 
-type ImportingTags = {
-    filePath: string;
-}
-
-type CombinedProps<T> = T & CommonProps;
+type CombinedProps<T> = {
+    [P in keyof T]?: T[P];
+} & CommonProps;
 
 // Normal Elements
 export const HTML = createElement<CombinedProps<HTMLElement>>('html');

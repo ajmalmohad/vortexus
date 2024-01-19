@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { format } from '../utils/format';
+import { Script, Style } from './domTags';
 
 export class Page {
     head: any;
@@ -70,8 +71,16 @@ export class Page {
     render(): string {
         let scripts = this.scripts.join('\n');
         let stylesheets = this.stylesheets.join('\n');
-        // TODO: Push stylesheets and scripts to body and head
-        // TODO: Change mandatory properties on typescript
+        stylesheets && this.head.children.push(
+            Style({
+                content: stylesheets
+            })
+        )
+        scripts && this.body.children.push(
+            Script({
+                content: scripts
+            })
+        )
 
         let head = this.parseNested(this.head, 0)
         let body = this.parseNested(this.body, 0)

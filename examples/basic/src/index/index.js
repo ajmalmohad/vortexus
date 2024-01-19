@@ -3,6 +3,9 @@ import { Box } from "../common/box.js";
 
 const index = new Page()
 
+index.addStylesheetFile("./src/index/index.css")
+index.addScriptFile("./src/index/script.js")
+
 const head = Head({
     children: [
         Title({
@@ -16,9 +19,6 @@ const head = Head({
             name: "keywords",
             content: "vortexus, vortexusjs, vortexus.js, vortexus-js, vortexus js, vortexus-js, vortexus js, vortexusjs.org, vortexus.org, vortexusjs.com, vortexus.com, vortexusjs.net, vortexus.net, vortexusjs.io, vortexus.io, vortexusjs.dev, vortexus.dev"
         }),
-        // StyleFile({
-        //     filePath: "./src/index/home.css"
-        // })
     ]
 })
 
@@ -39,12 +39,7 @@ const body = Body({
             href: "./home.html",
             class: "home-link"
         }),
-
         Box,
-
-        // ScriptFile({
-        //     filePath: "./src/index/script.js"
-        // })
     ]
 })
 
