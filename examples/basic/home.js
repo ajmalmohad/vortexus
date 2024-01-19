@@ -1,4 +1,4 @@
-import { Div, A } from 'vortexus';
+import { Div, A, Button, H1 } from 'vortexus';
 
 export const home = Div({
     class: 'test',
@@ -18,6 +18,12 @@ export const home = Div({
         A({
             href: 'https://google.com',
             content: 'Google'
+        }),
+        Button({
+            content: 'Click Me!'
+        }),
+        H1({
+            content: 'Hello World!'
         })
     ]
 });

@@ -1,4 +1,5 @@
-import { format } from "../utils/format";
+import fs from 'fs';
+import path from 'path';
 
 type ElementProps = {
     children?: string[];
@@ -17,11 +18,9 @@ export function createElement<T extends ElementProps>(tag: string) {
         const innerContent = content || "";
 
         return (
-            format(
-                `<${tag} ${attributeStrings}>
-                    ${innerContent} ${children?.length > 0 ? "\n" + children.join("\n") : ""}
-                </${tag}>`
-            )
+            `<${tag} ${attributeStrings}>
+                ${innerContent} ${children?.length > 0 ? "\n" + children.join("\n") : ""}
+            </${tag}>`
         );
     }
 }
@@ -36,6 +35,24 @@ export function createSelfClosingElement<T>(tag: string) {
 
         return (
             `<${tag} ${attributeStrings} />`
+        )
+    }
+}
+
+export function createImportingElement<T extends { filePath: string }>(tag: string) {
+    return function (props: T): string {
+        const { filePath, ...attributes } = props;
+
+        const attributeStrings = Object.entries(attributes)
+            .map(([key, value]) => `${key}="${value}"`)
+            .join(" ");
+
+        let content = fs.readFileSync(path.resolve(filePath), 'utf8');
+
+        return (
+            `<${tag} ${attributeStrings}>
+                ${content}
+            </${tag}>`
         )
     }
 }

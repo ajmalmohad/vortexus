@@ -1,4 +1,5 @@
 import { writeFile, existsSync, mkdirSync } from 'fs';
+import { format } from './../utils/format';
 
 export const buildPage = (page: string, filename: string) => {
     let dir = 'build';
@@ -13,7 +14,7 @@ export const buildPage = (page: string, filename: string) => {
 
     let path = dir + "/" + filename;
     console.log(path);
-    writeFile(path, page, { flag: 'w+' }, function (err) {
+    writeFile(path, format(page), { flag: 'w+' }, function (err) {
         if (err) throw err;
         console.log(filename + ' built!');
     });

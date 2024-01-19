@@ -1,8 +1,12 @@
-import { createElement, createSelfClosingElement } from "./tagFactory";
+import { createElement, createImportingElement, createSelfClosingElement } from "./tagFactory";
 
 type CommonProps = {
     children?: string[];
     content?: string;
+}
+
+type ImportingTags = {
+    filePath: string;
 }
 
 type CombinedProps<T> = T & CommonProps;
@@ -124,3 +128,6 @@ export const Param = createSelfClosingElement<HTMLParamElement>('param');
 export const Source = createSelfClosingElement<HTMLSourceElement>('source');
 export const Track = createSelfClosingElement<HTMLTrackElement>('track');
 export const Wbr = createSelfClosingElement<HTMLElement>('wbr');
+
+export const StyleFile = createImportingElement<HTMLStyleElement & ImportingTags>('style');
+export const ScriptFile = createImportingElement<HTMLScriptElement & ImportingTags>('script');

@@ -1,9 +1,9 @@
 [x] Create proper formatting
 [x] Building HTML and generating page
 [x] Page splitting and multipage apps
-[] Directly serve with express
-[] Adding external CSS
-[] Adding extra JS files
-[] Shipping JS
+[x] Directly serve with express
+[x] Adding external CSS
+[x] Adding extra JS files
+[x] Shipping JS
 [] InnerHTML
 [] Better Usability
