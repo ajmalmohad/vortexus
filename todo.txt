@@ -5,5 +5,7 @@
 [x] Adding external CSS
 [x] Adding extra JS files
 [x] Shipping JS
+[] Return a function instead of rendered content
+[] Render at build time or serve time
 [] InnerHTML
 [] Better Usability
