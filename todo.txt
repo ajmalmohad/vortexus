@@ -9,3 +9,6 @@
 [] Render at build time or serve time
 [] InnerHTML
 [] Better Usability
+[] Create singleton for pages so you can append to it
+[] Page as a singleton and renderable thing
+[] Maybe use a class for it

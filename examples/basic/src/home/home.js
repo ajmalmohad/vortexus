@@ -1,5 +1,7 @@
-import { Body, Button, H1, H3, HTML, ScriptFile, StyleFile, Head, Meta, Title, A } from "vortexus";
+import { Body, Page, Button, H1, H3, HTML, ScriptFile, StyleFile, Head, Meta, Title, A } from "vortexus";
 import { Box } from "../common/box.js";
+
+const home = new Page()
 
 const head = Head({
     children: [
@@ -46,9 +48,8 @@ const body = Body({
     ]
 })
 
-export const home = HTML({
-    children: [
-        head,
-        body
-    ]
-})
+home.head = head
+home.body = body
+
+export default home
+
