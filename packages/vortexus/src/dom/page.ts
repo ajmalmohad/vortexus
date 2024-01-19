@@ -1,9 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { format } from '../utils/format';
 
 export class Page {
-    head: string;
-    body: string;
+    head: any;
+    body: any;
     scripts: string[];
     stylesheets: string[];
 
@@ -32,25 +33,56 @@ export class Page {
         this.stylesheets.push(stylesheet);
     }
 
+    parseNested(obj: any, depth: number): string {
+        let result = '';
+        let type = obj.type
+
+        const attributeStrings = Object.entries(obj.attributes)
+            .map(([key, value]) => `${key}="${value}"`)
+            .join(" ");
+
+        switch (type) {
+            case 'self':
+                result += `<${obj.tag} ${attributeStrings} />\n`;
+                break;
+            case 'normal':
+                result += `<${obj.tag} ${attributeStrings}>\n`;
+
+                if (obj.content) {
+                    result += `${obj.content}\n`;
+                }
+
+                if (obj.children) {
+                    for (let child of obj.children) {
+                        result += this.parseNested(child, depth + 1)
+                    }
+                }
+
+                result += `</${obj.tag}>\n`;
+                break;
+            default:
+                break;
+        }
+
+        return result;
+    }
+
     render(): string {
         let scripts = this.scripts.join('\n');
         let stylesheets = this.stylesheets.join('\n');
+        // TODO: Push stylesheets and scripts to body and head
+        // TODO: Change mandatory properties on typescript
+
+        let head = this.parseNested(this.head, 0)
+        let body = this.parseNested(this.body, 0)
 
         return (
-            `<html>
-                <head>
-                    ${this.head}
-                    <style>
-                        ${stylesheets}
-                    </style>
-                </head>
-                <body>
-                    ${this.body}
-                    <script>
-                        ${scripts}
-                    </script>
-                </body>
-            </html>`
+            format(
+                `<html>
+                    ${head}
+                    ${body}
+                </html>`
+            )
         )
     }
 }

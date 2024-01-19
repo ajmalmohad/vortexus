@@ -1,4 +1,4 @@
-import { Body, Button, H1, H3, Page, ScriptFile, StyleFile, Head, Meta, Title, A } from "vortexus";
+import { Body, Button, H1, H3, Page, Head, Meta, Title, A } from "vortexus";
 import { Box } from "../common/box.js";
 
 const index = new Page()
@@ -16,9 +16,9 @@ const head = Head({
             name: "keywords",
             content: "vortexus, vortexusjs, vortexus.js, vortexus-js, vortexus js, vortexus-js, vortexus js, vortexusjs.org, vortexus.org, vortexusjs.com, vortexus.com, vortexusjs.net, vortexus.net, vortexusjs.io, vortexus.io, vortexusjs.dev, vortexus.dev"
         }),
-        StyleFile({
-            filePath: "./src/index/home.css"
-        })
+        // StyleFile({
+        //     filePath: "./src/index/home.css"
+        // })
     ]
 })
 
@@ -42,9 +42,9 @@ const body = Body({
 
         Box,
 
-        ScriptFile({
-            filePath: "./src/index/script.js"
-        })
+        // ScriptFile({
+        //     filePath: "./src/index/script.js"
+        // })
     ]
 })
 

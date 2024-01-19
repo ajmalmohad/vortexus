@@ -1,7 +1,6 @@
 import { writeFile, existsSync, mkdirSync } from 'fs';
-import { format } from './../utils/format';
 
-export const buildPage = (page: string, filename: string) => {
+export const buildPage = (page: any, filename: string) => {
     let dir = 'build';
 
     if (!existsSync(dir)){
@@ -14,7 +13,7 @@ export const buildPage = (page: string, filename: string) => {
 
     let path = dir + "/" + filename;
     console.log(path);
-    writeFile(path, format(page), { flag: 'w+' }, function (err) {
+    writeFile(path, page.render(), { flag: 'w+' }, function (err) {
         if (err) throw err;
         console.log(filename + ' built!');
     });
