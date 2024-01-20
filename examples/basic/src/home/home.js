@@ -3,8 +3,8 @@ import { Box } from "../common/box.js";
 
 const home = new Page()
 
-home.addStylesheetFile("./src/home/home.css")
-home.addScriptFile("./src/home/script.js")
+home.addStylesheetFile("src/home/home.css")
+home.addScriptFile("src/home/script.js")
 
 const head = Head({
     children: [
