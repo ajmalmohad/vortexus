@@ -36,7 +36,7 @@ const body = Body({
         }),
         A({
             content: "Home",
-            href: "./home.html",
+            href: "./home",
             class: "home-link"
         }),
         Box,

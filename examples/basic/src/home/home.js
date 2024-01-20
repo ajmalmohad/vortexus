@@ -36,7 +36,7 @@ const body = Body({
         }),
         A({
             content: "Index",
-            href: "./index.html",
+            href: "./index",
             class: "index-link"
         }),
         Box,
