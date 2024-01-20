@@ -1,4 +1,4 @@
-let button = document.querySelector('.home-button');
+let button = document.querySelector('.index-button');
 button.addEventListener('click', () => {
-    alert('Home Button Clicked!');
+    alert('Index Button Clicked!');
 });
