@@ -1,10 +1,11 @@
 import { Body, Page, Button, H1, H3, Head, Meta, Title, A } from "vortexus";
 import { Box } from "../common/box.js";
 
-const home = new Page()
+const about = new Page()
 
-home.addStylesheetFile("src/home/home.css")
-home.addScriptFile("src/home/script.js")
+about.addStylesheetFile("src/globals/global.css")
+about.addStylesheetFile("src/about/about.css")
+about.addScriptFile("src/about/script.js")
 
 const head = Head({
     children: [
@@ -31,20 +32,20 @@ const body = Body({
             content: "Over Complicate Multi Page Web Apps"
         }),
         Button({
-            content: "Home",
-            class: "home-button",
+            content: "about",
+            class: "about-button",
         }),
         A({
             content: "Index",
-            href: "./index",
+            href: "/",
             class: "index-link"
         }),
         Box,
     ]
 })
 
-home.head = head
-home.body = body
+about.head = head
+about.body = body
 
-export default home
+export default about
 

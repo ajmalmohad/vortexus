@@ -2,3 +2,8 @@
     color: red;
     font-size: 100px;
 }
+
+nav {
+    padding: 10px;
+    border: 1px solid #fff;
+}

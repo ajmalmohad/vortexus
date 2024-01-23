@@ -1,9 +1,9 @@
 import { render } from 'vortexus';
-import home from './src/home/home.js';
+import about from './src/about/about.js';
 import index from './src/index/index.js';
 
 let pages = {
-    home: home,
+    about: about,
     index: index
 }
 

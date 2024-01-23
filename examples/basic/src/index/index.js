@@ -1,8 +1,8 @@
-import { Body, Button, H1, H3, Page, Head, Meta, Title, A } from "vortexus";
-import { Box } from "../common/box.js";
+import { Body, Div, Nav, Main, Page, Head, Meta, Title, A } from "vortexus";
 
 const index = new Page()
 
+index.addStylesheetFile("src/globals/global.css")
 index.addStylesheetFile("src/index/index.css")
 index.addScriptFile("src/index/script.js")
 
@@ -24,24 +24,41 @@ const head = Head({
 
 const body = Body({
     children: [
-        H1({
-            content: "Vortexus"
-        }),
-        H3({
-            content: "Over Complicate Multi Page Web Apps"
-        }),
-        Button({
-            content: "Index",
-            class: "index-button",
-        }),
-        A({
-            content: "Home",
-            href: "./home",
-            class: "home-link"
-        }),
-        Box,
+        Div({
+            children: [
+                Nav({
+                    children: [
+                        A({
+                            href: "/",
+                            content: "Index"
+                        }),
+                        A({
+                            href: "/about",
+                            content: "About"
+                        })
+                    ]
+                }),
+                Main({
+                    children: [
+                        Div({
+                            content: "Static Site Generation (SSG)"
+                        }),
+                        Div({
+                            content: "Server-Side Rendering (SSR)"
+                        }),
+                        Div({
+                            content: "Simple"
+                        }),
+                        Div({
+                            content: "Fast"
+                        })
+                    ]
+                })
+            ]
+        })
     ]
-})
+});
+
 
 index.head = head
 index.body = body

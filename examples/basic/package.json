@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "vortexus-scripts start",
     "serve": "vortexus-scripts serve"
   },
   "author": "",
