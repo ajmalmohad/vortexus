@@ -14,3 +14,8 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
+nav {
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}

@@ -1,4 +1,5 @@
-import { Body, Div, Nav, Main, Page, Head, Meta, Title, A } from "vortexus";
+import { Body, Div, Main, Page, Head, Meta, Title, A } from "vortexus";
+import { Navbar } from "../common/navbar.js";
 
 const index = new Page()
 
@@ -26,18 +27,7 @@ const body = Body({
     children: [
         Div({
             children: [
-                Nav({
-                    children: [
-                        A({
-                            href: "/",
-                            content: "Index"
-                        }),
-                        A({
-                            href: "/about",
-                            content: "About"
-                        })
-                    ]
-                }),
+                Navbar,
                 Main({
                     children: [
                         Div({

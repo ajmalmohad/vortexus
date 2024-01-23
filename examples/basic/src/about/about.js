@@ -1,5 +1,5 @@
 import { Body, Page, Button, H1, H3, Head, Meta, Title, A } from "vortexus";
-import { Box } from "../common/box.js";
+import { Navbar } from "../common/navbar.js";
 
 const about = new Page()
 
@@ -25,22 +25,13 @@ const head = Head({
 
 const body = Body({
     children: [
+        Navbar,
         H1({
-            content: "Vortexus"
+            content: "About"
         }),
         H3({
-            content: "Over Complicate Multi Page Web Apps"
+            content: "Change the way you write web apps."
         }),
-        Button({
-            content: "about",
-            class: "about-button",
-        }),
-        A({
-            content: "Index",
-            href: "/",
-            class: "index-link"
-        }),
-        Box,
     ]
 })
 

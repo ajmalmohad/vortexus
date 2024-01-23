@@ -12,3 +12,5 @@
 [x] Page as a singleton and renderable thing
 [x] Maybe use a class for it
 [] allow local relative filepath for scripts and stylesheets
+[x] Rebuild on file change
+[] Add support to inline scripts
